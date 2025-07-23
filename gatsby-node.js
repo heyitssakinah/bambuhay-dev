@@ -167,6 +167,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       blocktype: String
       text: String
       logos: [HomepageLogo]
+      image: HomepageImage @link(from: "image___NODE")
     }
 
     interface HomepageTestimonial implements Node {
@@ -429,6 +430,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       blocktype: String @blocktype
       text: String
       logos: [HomepageLogo] @link(from: "logos___NODE")
+      image: HomepageImage @link(from: "image___NODE")
     }
 
     type ContentfulHomepageTestimonial implements Node & HomepageTestimonial

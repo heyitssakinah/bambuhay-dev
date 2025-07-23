@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { Space, Container, Section, FlexList, Text, Logo } from "./ui"
+import { getImage } from "gatsby-plugin-image"
 
 export function LogoItem(props) {
   if (!props.image) return null
@@ -12,8 +13,8 @@ export function LogoItem(props) {
 
 export default function LogoList(props) {
   return (
-    <Section paddingY={4}>
-      <Container width="narrow">
+    <Section paddingY={4} background="image" style={{ "--bg-image": `url(${getImage(props.image)?.images?.fallback?.src})`}}>
+      <Container width="narrow" >
         {props.text && (
           <Text center variant="lead">
             {props.text}
@@ -47,6 +48,11 @@ export const query = graphql`
         gatsbyImageData
         alt
       }
+    }
+    image {
+      id
+      gatsbyImageData
+      alt
     }
   }
 `

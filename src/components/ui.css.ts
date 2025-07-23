@@ -535,7 +535,7 @@ export const buttons: Record<ButtonVariants, string> = styleVariants({
   ],
 })
 
-export type Backgrounds = "primary" | "muted"
+export type Backgrounds = "primary" | "muted" | "image"
 
 export const backgrounds: Record<Backgrounds, string> = styleVariants({
   primary: {
@@ -546,6 +546,12 @@ export const backgrounds: Record<Backgrounds, string> = styleVariants({
     color: theme.colors.primary,
     backgroundColor: theme.colors.muted,
   },
+  image: {
+    backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--bg-image)",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    color: theme.colors.text,
+  }
 })
 
 export const blockquote = style({
