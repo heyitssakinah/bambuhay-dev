@@ -127,7 +127,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       links: [HomepageLink]
     }
 
-    interface HomepageFeature implements Node & HomepageBlock {
+    interface HomepageProjectAim implements Node & HomepageBlock {
       id: ID!
       blocktype: String
       heading: String
@@ -137,13 +137,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
       links: [HomepageLink]
     }
 
-    interface HomepageFeatureList implements Node & HomepageBlock {
+    interface HomepageProjectAimList implements Node & HomepageBlock {
       id: ID!
       blocktype: String
       kicker: String
       heading: String
       text: String
-      content: [HomepageFeature]
+      content: [HomepageProjectAim]
     }
 
     interface HomepageCta implements Node & HomepageBlock {
@@ -200,14 +200,14 @@ exports.createSchemaCustomization = async ({ actions }) => {
       content: [HomepageBenefit]
     }
 
-    interface HomepageStat implements Node {
+    interface HomepageCta implements Node {
       id: ID!
       value: String
       label: String
       heading: String
     }
 
-    interface HomepageStatList implements Node & HomepageBlock {
+    interface HomepageCtaList implements Node & HomepageBlock {
       id: ID!
       blocktype: String
       kicker: String
@@ -215,11 +215,10 @@ exports.createSchemaCustomization = async ({ actions }) => {
       text: String
       image: HomepageImage
       icon: HomepageImage
-      content: [HomepageStat]
       links: [HomepageLink]
     }
 
-    interface HomepageProduct implements Node {
+    interface HomepageMission implements Node {
       id: ID!
       heading: String
       text: String
@@ -227,13 +226,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
       links: [HomepageLink]
     }
 
-    interface HomepageProductList implements Node & HomepageBlock {
+    interface HomepageMissionList implements Node & HomepageBlock {
       id: ID!
       blocktype: String
       heading: String
       kicker: String
       text: String
-      content: [HomepageProduct]
+      content: [HomepageMission]
     }
 
     interface Homepage implements Node {
@@ -390,7 +389,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       links: [HomepageLink] @link(from: "links___NODE")
     }
 
-    type ContentfulHomepageFeature implements Node & HomepageBlock & HomepageFeature
+    type ContentfulHomepageProjectAim implements Node & HomepageBlock & HomepageProjectAim
       @dontInfer {
       blocktype: String @blocktype
       heading: String
@@ -400,13 +399,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
       links: [HomepageLink] @link(from: "links___NODE")
     }
 
-    type ContentfulHomepageFeatureList implements Node & HomepageBlock & HomepageFeatureList
+    type ContentfulHomepageProjectAimList implements Node & HomepageBlock & HomepageProjectAimList
       @dontInfer {
       blocktype: String @blocktype
       kicker: String
       heading: String
       text: String
-      content: [HomepageFeature] @link(from: "content___NODE")
+      content: [HomepageProjectAim] @link(from: "content___NODE")
     }
 
     type ContentfulHomepageCta implements Node & HomepageBlock & HomepageCta
@@ -467,14 +466,14 @@ exports.createSchemaCustomization = async ({ actions }) => {
       content: [HomepageBenefit] @link(from: "content___NODE")
     }
 
-    type ContentfulHomepageStat implements Node & HomepageStat @dontInfer {
+    type ContentfulHomepageCta implements Node & HomepageCta @dontInfer {
       id: ID!
       value: String
       label: String
       heading: String
     }
 
-    type ContentfulHomepageStatList implements Node & HomepageBlock & HomepageStatList
+    type ContentfulHomepageCtaList implements Node & HomepageBlock & HomepageCtaList
       @dontInfer {
       id: ID!
       blocktype: String @blocktype
@@ -483,11 +482,10 @@ exports.createSchemaCustomization = async ({ actions }) => {
       text: String
       image: HomepageImage @link(from: "image___NODE")
       icon: HomepageImage @link(from: "icon___NODE")
-      content: [HomepageStat] @link(from: "content___NODE")
       links: [HomepageLink] @link(from: "links___NODE")
     }
 
-    type ContentfulHomepageProduct implements Node & HomepageProduct
+    type ContentfulHomepageMission implements Node & HomepageMission
       @dontInfer {
       heading: String
       text: String
@@ -495,13 +493,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
       links: [HomepageLink] @link(from: "links___NODE")
     }
 
-    type ContentfulHomepageProductList implements Node & HomepageProductList & HomepageBlock
+    type ContentfulHomepageMissionList implements Node & HomepageMissionList & HomepageBlock
       @dontInfer {
       blocktype: String @blocktype
       heading: String
       kicker: String
       text: String
-      content: [HomepageProduct] @link(from: "content___NODE")
+      content: [HomepageMission] @link(from: "content___NODE")
     }
 
     type ContentfulHomepage implements Node & Homepage @dontInfer {

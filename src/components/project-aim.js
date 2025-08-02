@@ -12,7 +12,7 @@ import {
   ButtonList,
 } from "./ui"
 
-export default function Feature(props) {
+export default function ProjectAim(props) {
   return (
     <Section padding={4} background="muted">
       <Container>
@@ -40,7 +40,7 @@ export default function Feature(props) {
 }
 
 export const query = graphql`
-  fragment HomepageFeatureContent on HomepageFeature {
+  fragment HomepageProjectAimContent on HomepageProjectAim {
     id
     kicker
     heading

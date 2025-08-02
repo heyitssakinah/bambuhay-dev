@@ -13,7 +13,7 @@ import {
   LinkList,
 } from "./ui"
 
-function Product(props) {
+function Mission(props) {
   return (
     <Box center>
       {props.image && (
@@ -30,7 +30,7 @@ function Product(props) {
   )
 }
 
-export default function ProductList(props) {
+export default function MissionList(props) {
   return (
     <Section>
       <Container>
@@ -42,9 +42,9 @@ export default function ProductList(props) {
           {props.text && <Text>{props.text}</Text>}
         </Box>
         <FlexList gap={4} variant="responsive">
-          {props.content.map((product) => (
-            <li key={product.id}>
-              <Product {...product} />
+          {props.content.map((mission) => (
+            <li key={mission.id}>
+              <Mission {...mission} />
             </li>
           ))}
         </FlexList>
@@ -54,7 +54,7 @@ export default function ProductList(props) {
 }
 
 export const query = graphql`
-  fragment HomepageProductListContent on HomepageProductList {
+  fragment HomepageMissionListContent on HomepageMissionList {
     id
     kicker
     heading
