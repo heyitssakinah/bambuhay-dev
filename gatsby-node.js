@@ -125,6 +125,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage
       text: String
       links: [HomepageLink]
+      backgroundImage: HomepageImage @link(from: "backgroundImage___NODE")
     }
 
     interface HomepageProjectAim implements Node & HomepageBlock {
@@ -387,6 +388,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage @link(from: "image___NODE")
       text: String
       links: [HomepageLink] @link(from: "links___NODE")
+      backgroundImage: HomepageImage @link(from: "backgroundImage___NODE")
     }
 
     type ContentfulHomepageProjectAim implements Node & HomepageBlock & HomepageProjectAim

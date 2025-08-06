@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { Space, Container, Section, FlexList, Text, Logo } from "./ui"
+import { Space, Container, Section, FlexList, Text, Logo, Box } from "./ui"
 import { getImage } from "gatsby-plugin-image"
 
 export function LogoItem(props) {
@@ -13,24 +13,26 @@ export function LogoItem(props) {
 
 export default function LogoList(props) {
   return (
-    <Section paddingY={4} background="image" style={{ "--bg-image": `url(${getImage(props.image)?.images?.fallback?.src})`}}>
-      <Container width="narrow" >
-        {props.text && (
-          <Text center variant="lead">
-            {props.text}
-          </Text>
-        )}
-        <Space size={4} />
-        <FlexList gap={4} variant="center">
-          {props.logos.map(
-            (logo) =>
-              logo && (
-                <li key={logo.id}>
-                  <LogoItem {...logo} />
-                </li>
-              )
+    <Section paddingy={4}>
+      <Container width="wide">
+        <Box background="muted" radius="banner" paddingY={4}> 
+          {props.text && (
+            <Text center variant="lead">
+              {props.text}
+            </Text>
           )}
-        </FlexList>
+          <Space size={4} />
+          <FlexList gap={4} variant="center">
+            {props.logos.map(
+              (logo) =>
+                logo && (
+                  <li key={logo.id}>
+                    <LogoItem {...logo} />
+                  </li>
+                )
+            )}
+          </FlexList>
+        </Box>
       </Container>
     </Section>
   )

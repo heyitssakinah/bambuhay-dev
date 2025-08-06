@@ -15,7 +15,7 @@ import {
 
 export default function Hero(props) {
   return (
-    <Section>
+    <Section paddingY={4} backgound ="image" style={{ "--bg-image": `url(${getImage(props.backgoundImage)?.images?.fallback?.src})` }}>
       <Container>
         <Flex gap={4} variant="responsive">
           <Box width="half">
@@ -54,6 +54,11 @@ export const query = graphql`
       text
     }
     image {
+      id
+      gatsbyImageData
+      alt
+    }
+    backgroundImage {
       id
       gatsbyImageData
       alt

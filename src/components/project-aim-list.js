@@ -7,7 +7,7 @@ export default function ProjetAimList(props) {
   return (
     <Container width="fullbleed">
       <Box background="muted" radius="large">
-        <Box center paddingY={5}>
+        <Box center paddingTop={5}>
           <Heading>
             {props.kicker && <Kicker>{props.kicker}</Kicker>}
             {props.heading}
