@@ -53,6 +53,7 @@ export function Box({
   background,
   padding,
   paddingY,
+  paddingX,
   paddingTop,
   paddingBottom,
   radius,
